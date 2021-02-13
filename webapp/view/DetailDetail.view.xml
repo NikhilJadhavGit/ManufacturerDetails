@@ -1,0 +1,195 @@
+<mvc:View
+	controllerName="sap.ui.demo.fiori2.controller.DetailDetail"
+	xmlns="sap.f"
+	xmlns:m="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:form="sap.ui.layout.form">
+	<DynamicPage toggleHeaderOnTitleClick="false">
+		<title>
+			<DynamicPageTitle>
+				<heading>
+					<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Center">
+						<m:Title text="{mLst>id}" wrapping="true" class="sapUiTinyMarginEnd"/>
+					</m:FlexBox>
+				</heading>
+				<actions>
+					<m:ToggleButton
+						id="editBtn"
+						text="Edit"
+						visible="true"
+						type="Emphasized"
+                        press=".onEditPress"/>
+					<m:Button
+						text="Delete"
+						type="Transparent"
+						press=".onDeletePress"/>
+				</actions>
+			</DynamicPageTitle>
+		</title>
+		<content>
+			<m:VBox>
+					<form:SimpleForm
+								id="itemDetail"
+								maxContainerCols="2"
+								editable="false"
+								layout="ResponsiveGridLayout"
+								labelSpanL="12"
+								labelSpanM="12"
+								emptySpanL="0"
+								emptySpanM="0"
+								columnsL="1"
+								columnsM="1"
+								visible="false">
+								<form:content>
+									<m:Label text="Id"/>
+									<m:Text text="{mLst>id}"/>
+									<m:Label text="item"/>
+									<m:Text text="{mLst>item}"/>
+									<m:Label text="Model"/>
+									<m:Text text="{mLst>model}"/>
+									<m:Button text="Back" press=".backBtn"/>
+								</form:content>
+					</form:SimpleForm>
+
+					<form:SimpleForm
+								id="itemEdit"
+								maxContainerCols="2"
+								editable="false"
+								layout="ResponsiveGridLayout"
+								labelSpanL="12"
+								labelSpanM="12"
+								emptySpanL="0"
+								emptySpanM="0"
+								columnsL="1"
+								columnsM="1"
+								visible="false">
+								<form:content>
+									<m:Label text="Id"/>
+									<m:Text text="{mLst>id}"/>
+									<m:Label text="item"/>
+									<m:Input id="itemitem" value="{path:'mLst>item', type : 'sap.ui.model.type.String',
+													constraints : {
+														minLength: 1,
+														maxLength: 10
+													}}" change= ".onNameChange"/>
+									<m:Label text="Model"/>
+									<m:Input id="itemmodel" value="{path:'mLst>model', type : 'sap.ui.model.type.String',
+													constraints : {
+														minLength: 1,
+														maxLength: 10
+													}}" change= ".onNameChange"/>
+									<m:Button text="save" press="onItemSave"/>
+									<m:Button text="cancel" press="onItemCancel"/>
+								</form:content>
+					</form:SimpleForm>
+
+
+
+
+					<form:SimpleForm
+								id="branchDetail"
+								maxContainerCols="2"
+								editable="false"
+								layout="ResponsiveGridLayout"
+								labelSpanL="12"
+								labelSpanM="12"
+								emptySpanL="0"
+								emptySpanM="0"
+								columnsL="1"
+								columnsM="1"
+								visible="false">
+								<form:content>
+									<m:Label text="Id"/>
+									<m:Text text="{mLst>id}"/>
+									<m:Label text="Place"/>
+									<m:Text text="{mLst>place}"/>
+									<m:Button text="Back" press=".backBtn"/>
+								</form:content>
+					</form:SimpleForm>
+
+					<form:SimpleForm
+								id="branchEdit"
+								maxContainerCols="2"
+								editable="false"
+								layout="ResponsiveGridLayout"
+								labelSpanL="12"
+								labelSpanM="12"
+								emptySpanL="0"
+								emptySpanM="0"
+								columnsL="1"
+								columnsM="1"
+								visible="false">
+								<form:content>
+									<m:Label text="Id"/>
+									<m:Text text="{mLst>id}"/>
+									<m:Label text="Place"/>
+									<m:Input id="branchplace" value="{path:'mLst>place', type : 'sap.ui.model.type.String',
+													constraints : {
+														minLength: 1,
+														maxLength: 10
+													}}" change= ".onNameChange"/>
+									<m:Button text="save" press="onBranchSave"/>
+									<m:Button text="cancel" press="onBranchCancell"/>
+								</form:content>
+					</form:SimpleForm>
+
+
+
+					<form:SimpleForm
+								id="outletDetail"
+								maxContainerCols="2"
+								editable="false"
+								layout="ResponsiveGridLayout"
+								labelSpanL="12"
+								labelSpanM="12"
+								emptySpanL="0"
+								emptySpanM="0"
+								columnsL="1"
+								columnsM="1"
+								visible="false">
+								<form:content>
+									<m:Label text="Id"/>
+									<m:Text text="{mLst>id}"/>
+									<m:Label text="Name"/>
+									<m:Text text="{mLst>Name}"/>
+									<m:Label text="Model"/>
+									<m:Text text="{mLst>place}"/>
+									<m:Button text="Back" press=".backBtn"/>
+								</form:content>
+					</form:SimpleForm>
+
+					<form:SimpleForm
+								id="outletEdit"
+								maxContainerCols="2"
+								editable="false"
+								layout="ResponsiveGridLayout"
+								labelSpanL="12"
+								labelSpanM="12"
+								emptySpanL="0"
+								emptySpanM="0"
+								columnsL="1"
+								columnsM="1"
+								visible="false">
+								<form:content>
+									<m:Label text="Id"/>
+									<m:Text text="{mLst>id}"/>
+									<m:Label text="Name"/>
+									<m:Input id="outletname" value="{path:'mLst>Name', type : 'sap.ui.model.type.String',
+													constraints : {
+														minLength: 1,
+														maxLength: 10
+													}}" change= ".onNameChange"/>
+									<m:Label text="Place"/>
+									<m:Input id="outletplace" value="{path:'mLst>place', type : 'sap.ui.model.type.String',
+													constraints : {
+														minLength: 1,
+														maxLength: 10
+													}}" change= ".onNameChange"/>								
+									<m:Button text="save" press="onOutletSave"/>
+									<m:Button text="cancel" press="onOutletCancell"/>
+								</form:content>
+					</form:SimpleForm>
+			</m:VBox>
+		</content>
+	</DynamicPage>
+</mvc:View>

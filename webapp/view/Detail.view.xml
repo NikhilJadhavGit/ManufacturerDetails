@@ -1,0 +1,283 @@
+<mvc:View
+	xmlns="sap.uxap"
+	xmlns:m="sap.m"
+	xmlns:f="sap.f"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc"
+    controllerName="sap.ui.demo.fiori2.controller.Detail">
+	<ObjectPageLayout
+		id="ObjectPageLayout"
+		showTitleInHeaderContent="true"
+		alwaysShowContentHeader="false"
+		preserveHeaderStateOnScroll="false"
+		headerContentPinnable="true"
+		isChildPage="true"
+		upperCaseAnchorBar="false">
+        <headerTitle>
+
+			<ObjectPageDynamicHeaderTitle>
+				<expandedHeading>
+					<m:Title text="{mLst>Name}" wrapping="true" class="sapUiSmallMarginEnd"/>
+				</expandedHeading>
+
+				<snappedHeading>
+					<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Center">
+						<m:FlexBox wrap="NoWrap" fitContainer="true" alignItems="Center" class="sapUiTinyMarginEnd">
+							<f:Avatar
+								src="https://sapui5.hana.ondemand.com/{products>ProductPicUrl}"
+								displaySize="S"
+								displayShape="Square"
+								class="sapUiTinyMarginEnd"/>
+							<m:Title text="{mLst>Name}" wrapping="true"/>
+						</m:FlexBox>
+					</m:FlexBox>
+				</snappedHeading>
+				<actions>
+					<m:ToggleButton
+						id="editBtn"
+						text="Edit"
+						visible="true"
+						type="Emphasized"
+                        press=".onEditToggleButtonPress"/>
+					<m:Button
+						text="Delete"
+						type="Transparent"
+						press=".onDeleteBtnPress"/>
+					<m:Button
+						id="backBtn"
+						text="Back"
+						type="Transparent"
+						press=".back"/>
+				</actions>
+
+			</ObjectPageDynamicHeaderTitle>
+
+		</headerTitle>
+
+        <headerContent>
+			<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">
+				<f:Avatar
+					src="https://sapui5.hana.ondemand.com/{products>ProductPicUrl}"
+					displaySize="L"
+					displayShape="Square"
+					class="sapUiTinyMarginEnd">
+				</f:Avatar>
+				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
+					<m:Label text="Id"/>
+					<m:Text text="{mLst>id}"/>
+				</m:VBox>
+				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
+					<m:Label text="Category"/>
+					<m:Text text="{mLst>typeOfProduct}"/>
+				</m:VBox>
+			</m:FlexBox>
+		</headerContent>
+        <sections>
+			<ObjectPageSection title="General Information">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+
+							<form:SimpleForm
+								id="infoDetail"
+								maxContainerCols="2"
+								editable="false"
+								layout="ResponsiveGridLayout"
+								labelSpanL="12"
+								labelSpanM="12"
+								emptySpanL="0"
+								emptySpanM="0"
+								columnsL="1"
+								columnsM="1"
+								visible="true">
+								<form:content>
+									<m:Label text="Owner"/>
+									<m:Text text="{parts:[{path:'mLst>Fname'},{path:'mLst>Lname'}],formatter:'.fullNameFormatter'}"/>
+									<m:Label text="Phone no"/>
+									<m:Text text="{mLst>Phno}"/>
+									<m:Label text="Email"/>
+									<m:Text text="{mLst>Email}"/>
+									<m:Label text="Address"/>
+									<m:Text text="{mLst>Address}"/>
+								</form:content>
+							</form:SimpleForm>
+
+							<form:SimpleForm
+								id="infoEdit"
+								maxContainerCols="2"
+								editable="false"
+								layout="ResponsiveGridLayout"
+								labelSpanL="12"
+								labelSpanM="12"
+								emptySpanL="0"
+								emptySpanM="0"
+								columnsL="1"
+								columnsM="1"
+								visible="false">
+								<form:content>
+									<m:Label text="First Name"/>
+									<m:Input id="efname" value="{path:'mLst>Fname', type : 'sap.ui.model.type.String',
+													constraints : {
+														minLength: 1,
+														maxLength: 10
+													}}" change= ".onNameChange"/>
+									<m:Label text="Last Name"/>
+									<m:Input id="elname" value="{path:'mLst>Lname' ,type : 'sap.ui.model.type.String',
+													constraints : {
+														minLength: 1,
+														maxLength: 10
+													}}" change= ".onNameChange"/>
+									<m:Label text="Phone no"/>
+									<m:Input id="ephoneno" value="{path:'mLst>Phno', type: '.customPhoneType'}" valueStateText="Phone no must be a valid." change= ".onNameChange"/>
+									<m:Label text="Email"/>
+									<m:Input id="eemail" value="{path:'mLst>Email', type: '.customEMailType'}" valueStateText="E-mail must be a valid email address." change= ".onNameChange" />
+									<m:Label text="Address"/>
+									<m:TextArea id="eaddress" type="textArea" value="{path:'mLst>Address', type : 'sap.ui.model.type.String',
+													constraints : {
+														minLength: 1,
+														maxLength: 250
+													}}" change= ".onNameChange"/>
+								</form:content>
+							</form:SimpleForm>
+
+							<form:SimpleForm
+								id="infoAdd"
+								maxContainerCols="2"
+								editable="false"
+								layout="ResponsiveGridLayout"
+								labelSpanL="12"
+								labelSpanM="12"
+								emptySpanL="0"
+								emptySpanM="0"
+								columnsL="1"
+								columnsM="1"
+								visible="false">
+								<form:content>
+									<m:Label text="Company Name"/>
+									<m:Input id="aname" value="{path:'mLst>Name', type : 'sap.ui.model.type.String',
+													constraints : {
+														minLength: 1,
+														maxLength: 30
+													}}" change= ".onNameChange"/>
+									<m:Label text="Type of products"/>
+									<m:Input id="aproducttype" value="{path:'mLst>typeOfProduct', type : 'sap.ui.model.type.String',
+													constraints : {
+														minLength: 1,
+														maxLength: 30
+													}}" change= ".onNameChange"/>
+									<m:Label text="First Name"/>
+									<m:Input id="afname" value="{path:'mLst>Fname', type : 'sap.ui.model.type.String',
+													constraints : {
+														minLength: 1,
+														maxLength: 30
+													}}" change= ".onNameChange"/>
+									<m:Label text="Last Name"/>
+									<m:Input id="alname" value="{path:'mLst>Lname' ,type : 'sap.ui.model.type.String',
+													constraints : {
+														minLength: 1,
+														maxLength: 30
+													}}" change= ".onNameChange"/>
+									<m:Label text="Phone no"/>
+									<m:Input id="aphoneno" value="{path:'mLst>Phno', type: '.customPhoneType'}" valueStateText="Phone no must be a valid." change= ".onNameChange"/>
+									<m:Label text="Email"/>
+									<m:Input id="aemail" value="{path:'mLst>Email', type: '.customEMailType'}" valueStateText="E-mail must be a valid email address." change= ".onNameChange" />
+									<m:Label text="Address"/>
+									<m:TextArea id="aaddress" type="textArea" value="{path:'mLst>Address', type : 'sap.ui.model.type.String',
+													constraints : {
+														minLength: 1,
+														maxLength: 500
+													}}" change= ".onNameChange"/>
+								</form:content>
+							</form:SimpleForm>
+
+
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection title="Items">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<m:Table
+								id="suppliersTable"
+								items="{path : 'mLst>Items'}">
+								<m:columns>
+									<m:Column/>
+								</m:columns>
+								<m:items>
+									<m:ColumnListItem type="Navigation" press=".onItemPress">
+										<m:cells>
+											<m:ObjectIdentifier text="{mLst>item}"/>
+										</m:cells>
+									</m:ColumnListItem>
+								</m:items>
+							</m:Table>
+							<m:Button id="addItemBtn" text="Add" press=".itemAdd"/>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection title="Branches">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<m:Table
+								id="BranchesTable"
+								items="{path : 'mLst>Branches'}">
+								<m:columns>
+									<m:Column/>
+								</m:columns>
+								<m:items>
+									<m:ColumnListItem type="Navigation" press=".onBranchPress">
+										<m:cells>
+											<m:ObjectIdentifier text="{mLst>place}"/>
+										</m:cells>
+									</m:ColumnListItem>
+								</m:items>
+							</m:Table>
+							<m:Button id="addBranchBtn" text="Add" press=".branchAdd"/>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection title="Outlets">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<m:Table
+								id="OutletsTable"
+								items="{path : 'mLst>Outlets'}">
+								<m:columns>
+									<m:Column/>
+								</m:columns>
+								<m:items>
+									<m:ColumnListItem type="Navigation" press=".onOutletPress">
+										<m:cells>
+											<m:ObjectIdentifier text="{mLst>Name}"/>
+										</m:cells>
+									</m:ColumnListItem>
+								</m:items>
+							</m:Table>
+							<m:Button id="addOutletBtn" text="Add" press=".outletAdd"/>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+
+
+        <footer>
+			<m:OverflowToolbar>
+				<m:ToolbarSpacer/>
+				<m:Button type="Accept" text="Save" press=".onSavePress"/>
+				<m:Button type="Reject" text="Cancel" press=".onCancelPress"/>
+			</m:OverflowToolbar>
+		</footer>
+
+	</ObjectPageLayout>
+    
+</mvc:View>

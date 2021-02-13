@@ -1,0 +1,112 @@
+{
+    "manufacturer":[
+        {   "id":"mn0",
+            "Name":"Nikhil Electronics",
+            "Fname":"Nikhil",
+            "Lname":"Jadhav",
+            "Phno":"9421255405",
+            "Email":"nikhiljadhav@gmail.com",
+            "typeOfProduct":"Electronics",
+            "Items":[
+                {
+                    "id":"i0000",
+                    "item":"Laptop",
+                    "model":"M0000"
+                },
+                {
+                    "id":"i0001",
+                    "item":"Mobile",
+                    "model":"M0001"
+                }
+            ],
+            "Address":"Pune",
+            "Branches":[
+                {
+                    "id":"b1000",
+                    "place":"Pune"
+                },
+                {
+                    "id":"b1001",
+                    "place":"Mumbai"
+                },
+                {
+                    "id":"b1002",
+                    "place":"Delhi"
+                }
+            ],
+            "Outlets":[
+                {
+                    "id":"o0001",
+                    "Name":"Electronics Shopie",
+                    "place":"Pune"
+                },
+                {   
+                    "id":"o0002",
+                    "Name":"Laptop Store",
+                    "place":"Mumbai"
+                },
+                {
+                    "id":"o0002",
+                    "Name":"Mobile shop",
+                    "place":"Delhi"
+                }
+            ]
+
+        },
+
+
+        {   "id":"mn1",
+            "Name":"Nipun Automobile",
+            "Fname":"Nipun",
+            "Lname":"Jadhav",
+            "Phno":"7410106235",
+            "Email":"nipunjadhav@gmail.com",
+            "typeOfProduct":"Automobile",
+            "Items":[
+                {
+                    "id":"i0000",
+                    "item":"Sedan",
+                    "model":"M0003"
+                },
+                {
+                    "id":"i0001",
+                    "item":"SUV",
+                    "model":"M0004"
+                }
+            ],
+            "Address":"Pune",
+            "Branches":[
+                {
+                    "id":"b1003",
+                    "place":"Pune"
+                },
+                {
+                    "id":"b1004",
+                    "place":"Mumbai"
+                },
+                {
+                    "id":"b1005",
+                    "place":"Delhi"
+                }
+            ],
+            "Outlets":[
+                {
+                    "id":"o0001",
+                    "Name":"Showroom",
+                    "place":"Pune"
+                },
+                {   
+                    "id":"o0002",
+                    "Name":"Car Store",
+                    "place":"Mumbai"
+                },
+                {
+                    "id":"o0002",
+                    "Name":"Express Vehicals",
+                    "place":"Delhi"
+                }
+            ]
+
+        }
+    ]
+}

@@ -1,0 +1,171 @@
+<mvc:View
+    id="profile"
+	xmlns="sap.uxap"
+	xmlns:m="sap.m"
+	xmlns:f="sap.f"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc"
+    controllerName="sap.ui.demo.fiori2.controller.Detail">
+    <m:App id="app">
+    <m:pages>
+    <m:Page>
+	<ObjectPageLayout
+		id="ObjectPageLayout"
+		showTitleInHeaderContent="true"
+		alwaysShowContentHeader="false"
+		preserveHeaderStateOnScroll="false"
+		headerContentPinnable="true"
+		isChildPage="true"
+		upperCaseAnchorBar="false">
+        <headerTitle>
+
+			<ObjectPageDynamicHeaderTitle>
+				<expandedHeading>
+					<m:Title text="Nikhil Yogesh Jadhav" wrapping="true" class="sapUiSmallMarginEnd"/>
+				</expandedHeading>
+                
+				<snappedHeading>
+					<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Center">
+						<m:FlexBox wrap="NoWrap" fitContainer="true" alignItems="Center" class="sapUiTinyMarginEnd">
+							<f:Avatar
+								src="nikhil.jpg"
+								displaySize="S"
+								displayShape="Square"
+								class="sapUiTinyMarginEnd"/>
+							<m:Title text="Nikhil Jadhav" wrapping="true"/>
+						</m:FlexBox>
+					</m:FlexBox>
+				</snappedHeading>
+                <actions>
+					<m:Button
+						id="backBtn"
+						text="Back"
+						type="Transparent"
+						press=".back"/>
+				</actions>
+			</ObjectPageDynamicHeaderTitle>
+
+		</headerTitle>
+
+        <headerContent>
+			<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">
+				<f:Avatar
+					src="nikhil.jpg"
+					displaySize="L"
+					displayShape="Square"
+					class="sapUiTinyMarginEnd">
+				</f:Avatar>
+				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
+					<m:Label text="Id"/>
+					<m:Text text="MM0549"/>
+				</m:VBox>
+				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
+					<m:Label text="Designation"/>
+					<m:Text text="Developer Trainee"/>
+				</m:VBox>
+			</m:FlexBox>
+		</headerContent>
+        <sections>
+			<ObjectPageSection title="General Information">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+
+							<form:SimpleForm
+								maxContainerCols="2"
+								editable="false"
+								layout="ResponsiveGridLayout"
+								labelSpanL="12"
+								labelSpanM="12"
+								emptySpanL="0"
+								emptySpanM="0"
+								columnsL="1"
+								columnsM="1"
+								visible="true">
+								<form:content>
+									<m:Label text="Name"/>
+									<m:Text text="Nikhil Yogesh Jadhav"/>
+                                    <m:Label text="Date of Birth"/>
+					                <m:Text text="28/09/1998"/>
+                                    <m:Label text="Blood group"/>
+					                <m:Text text="O+"/>
+									<m:Label text="Address"/>
+									<m:Text text="Little Earth, B3 flat no 1102, Kiwale, Pune 412101"/>
+								</form:content>
+							</form:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection title="Education">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+
+							<form:SimpleForm
+								maxContainerCols="2"
+								editable="false"
+								layout="ResponsiveGridLayout"
+								labelSpanL="12"
+								labelSpanM="12"
+								emptySpanL="0"
+								emptySpanM="0"
+								columnsL="1"
+								columnsM="1"
+								visible="true">
+								<form:content>
+									<m:Label text="Engineering Aggrigate"/>
+									<m:Text text="71%"/>
+									<m:Label text="12th"/>
+									<m:Text text="65.54%"/>
+                                    <m:Label text="10th"/>
+									<m:Text text="84.6%"/>
+								</form:content>
+							</form:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+            <ObjectPageSection title="Employee Information">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+
+							<form:SimpleForm
+								maxContainerCols="2"
+								editable="false"
+								layout="ResponsiveGridLayout"
+								labelSpanL="12"
+								labelSpanM="12"
+								emptySpanL="0"
+								emptySpanM="0"
+								columnsL="1"
+								columnsM="1"
+								visible="true">
+								<form:content>
+                                    <m:Label text="Id"/>
+					                <m:Text text="MM0549"/>
+                                    <m:Label text="Date of joining"/>
+					                <m:Text text="04/01/2021"/>
+                                    <m:Label text="Phone no"/>
+									<m:Text text="7410106235"/>
+                                    <m:Label text="Alternate Phone no"/>
+									<m:Text text="9421255405"/>
+									<m:Label text="Email"/>
+									<m:Text text="nikhil.jadhav@maventic.com"/>
+								</form:content>
+							</form:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+
+	</ObjectPageLayout>
+    </m:Page>
+    </m:pages>
+    </m:App>
+    
+</mvc:View>

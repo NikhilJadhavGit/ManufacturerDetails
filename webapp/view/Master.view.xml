@@ -1,0 +1,82 @@
+<mvc:View
+	controllerName="sap.ui.demo.fiori2.controller.Master"
+	xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:mvc="sap.ui.core.mvc">
+	<f:DynamicPage id="dynamicPageId" toggleHeaderOnTitleClick="false">
+		<!-- DynamicPage Title -->
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="Manufacturers"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+
+		<!-- DynamicPage Content -->
+		<f:content>
+			<VBox fitContainer="true">
+				<OverflowToolbar class="sapFDynamicPageAlignContent">
+					<ToolbarSpacer/>
+					<OverflowToolbarButton icon="sap-icon://person-placeholder" text="Profile" type="Transparent" press=".profile"/>
+					<SearchField
+					 	id="searchField"
+						width="17.5rem"
+						placeholder="Search for..."
+						enableSuggestions="true"
+						search=".onSearch"
+						suggest=".onSuggest"
+						suggestionItems="{
+							path: 'mLst>/manufacturer',
+							sorter: { path: 'Name' }
+						}">
+					<SuggestionItem text="{mLst>Name}" description="{path:'mLst>id'}" key="{mLst>id}"/>
+					</SearchField>
+					<OverflowToolbarButton icon="sap-icon://add" text="Add" type="Transparent" press=".onAdd"/>
+					<OverflowToolbarButton icon="sap-icon://sort" text="Sort" type="Transparent" press=".onSort"/>
+				</OverflowToolbar>
+				<Table
+					id="productsTable"
+					inset="false"
+					items="{
+						path: 'mLst>/manufacturer',
+						sorter: {
+							path: 'Name'
+						}
+					}"
+					class="sapFDynamicPageAlignContent"
+					width="auto">
+					<columns>
+						<Column width="12em">
+							<Text text="Manufacturer"/>
+						</Column>
+						<Column width="20em">
+							<Text text="Contact details"/>
+						</Column>
+						<Column	hAlign="End">
+							<Text text="Type of product"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem type="Navigation" press=".onListItemPress">
+							<cells>
+								<ObjectIdentifier title="{mLst>id}" text="{mLst>Name}"/>
+								<ObjectIdentifier title="{mLst>Email}" text="{mLst>Phno}"/>
+								<ObjectIdentifier title="{mLst>typeOfProduct}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</VBox>
+		</f:content>
+
+		<!-- DynamicPage Footer -->
+		<f:footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button type="Accept" text="Accept"/>
+				<Button type="Reject" text="Reject"/>
+			</OverflowToolbar>
+		</f:footer>
+	</f:DynamicPage>
+</mvc:View>
