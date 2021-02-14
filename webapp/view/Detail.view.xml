@@ -35,17 +35,17 @@
 				<actions>
 					<m:ToggleButton
 						id="editBtn"
-						text="Edit"
+						text="{i18n>EditBtn}"
 						visible="true"
 						type="Emphasized"
                         press=".onEditToggleButtonPress"/>
 					<m:Button
-						text="Delete"
+						text="{i18n>DeleteBtn}"
 						type="Transparent"
 						press=".onDeleteBtnPress"/>
 					<m:Button
 						id="backBtn"
-						text="Back"
+						text="{i18n>BackBtn}"
 						type="Transparent"
 						press=".back"/>
 				</actions>
@@ -63,17 +63,17 @@
 					class="sapUiTinyMarginEnd">
 				</f:Avatar>
 				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
-					<m:Label text="Id"/>
+					<m:Label text="{i18n>Id}"/>
 					<m:Text text="{mLst>id}"/>
 				</m:VBox>
 				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
-					<m:Label text="Category"/>
+					<m:Label text="{i18n>Category}"/>
 					<m:Text text="{mLst>typeOfProduct}"/>
 				</m:VBox>
 			</m:FlexBox>
 		</headerContent>
         <sections>
-			<ObjectPageSection title="General Information">
+			<ObjectPageSection title="{i18n>GeneralInfo}">
 				<subSections>
 					<ObjectPageSubSection>
 						<blocks>
@@ -91,13 +91,13 @@
 								columnsM="1"
 								visible="true">
 								<form:content>
-									<m:Label text="Owner"/>
+									<m:Label text="{i18n>Owner}"/>
 									<m:Text text="{parts:[{path:'mLst>Fname'},{path:'mLst>Lname'}],formatter:'.fullNameFormatter'}"/>
-									<m:Label text="Phone no"/>
+									<m:Label text="{i18n>Phone}"/>
 									<m:Text text="{mLst>Phno}"/>
-									<m:Label text="Email"/>
+									<m:Label text="{i18n>Email}"/>
 									<m:Text text="{mLst>Email}"/>
-									<m:Label text="Address"/>
+									<m:Label text="{i18n>Address}"/>
 									<m:Text text="{mLst>Address}"/>
 								</form:content>
 							</form:SimpleForm>
@@ -115,23 +115,23 @@
 								columnsM="1"
 								visible="false">
 								<form:content>
-									<m:Label text="First Name"/>
+									<m:Label text="{i18n>Fname}"/>
 									<m:Input id="efname" value="{path:'mLst>Fname', type : 'sap.ui.model.type.String',
 													constraints : {
 														minLength: 1,
 														maxLength: 10
 													}}" change= ".onNameChange"/>
-									<m:Label text="Last Name"/>
+									<m:Label text="{i18n>Lname}"/>
 									<m:Input id="elname" value="{path:'mLst>Lname' ,type : 'sap.ui.model.type.String',
 													constraints : {
 														minLength: 1,
 														maxLength: 10
 													}}" change= ".onNameChange"/>
-									<m:Label text="Phone no"/>
+									<m:Label text="{i18n>Phone}"/>
 									<m:Input id="ephoneno" value="{path:'mLst>Phno', type: '.customPhoneType'}" valueStateText="Phone no must be a valid." change= ".onNameChange"/>
-									<m:Label text="Email"/>
+									<m:Label text="{i18n>Email}"/>
 									<m:Input id="eemail" value="{path:'mLst>Email', type: '.customEMailType'}" valueStateText="E-mail must be a valid email address." change= ".onNameChange" />
-									<m:Label text="Address"/>
+									<m:Label text="{i18n>Address}"/>
 									<m:TextArea id="eaddress" type="textArea" value="{path:'mLst>Address', type : 'sap.ui.model.type.String',
 													constraints : {
 														minLength: 1,
@@ -153,35 +153,35 @@
 								columnsM="1"
 								visible="false">
 								<form:content>
-									<m:Label text="Company Name"/>
+									<m:Label text="{i18n>Company}"/>
 									<m:Input id="aname" value="{path:'mLst>Name', type : 'sap.ui.model.type.String',
 													constraints : {
 														minLength: 1,
 														maxLength: 30
 													}}" change= ".onNameChange"/>
-									<m:Label text="Type of products"/>
+									<m:Label text="{i18n>TypeOfProducts}"/>
 									<m:Input id="aproducttype" value="{path:'mLst>typeOfProduct', type : 'sap.ui.model.type.String',
 													constraints : {
 														minLength: 1,
 														maxLength: 30
 													}}" change= ".onNameChange"/>
-									<m:Label text="First Name"/>
+									<m:Label text="{i18n>Fname}"/>
 									<m:Input id="afname" value="{path:'mLst>Fname', type : 'sap.ui.model.type.String',
 													constraints : {
 														minLength: 1,
 														maxLength: 30
 													}}" change= ".onNameChange"/>
-									<m:Label text="Last Name"/>
+									<m:Label text="{i18n>Lname}"/>
 									<m:Input id="alname" value="{path:'mLst>Lname' ,type : 'sap.ui.model.type.String',
 													constraints : {
 														minLength: 1,
 														maxLength: 30
 													}}" change= ".onNameChange"/>
-									<m:Label text="Phone no"/>
+									<m:Label text="{i18n>Phone}"/>
 									<m:Input id="aphoneno" value="{path:'mLst>Phno', type: '.customPhoneType'}" valueStateText="Phone no must be a valid." change= ".onNameChange"/>
-									<m:Label text="Email"/>
+									<m:Label text="{i18n>Email}"/>
 									<m:Input id="aemail" value="{path:'mLst>Email', type: '.customEMailType'}" valueStateText="E-mail must be a valid email address." change= ".onNameChange" />
-									<m:Label text="Address"/>
+									<m:Label text="{i18n>Address}"/>
 									<m:TextArea id="aaddress" type="textArea" value="{path:'mLst>Address', type : 'sap.ui.model.type.String',
 													constraints : {
 														minLength: 1,
@@ -196,7 +196,7 @@
 				</subSections>
 			</ObjectPageSection>
 
-			<ObjectPageSection title="Items">
+			<ObjectPageSection title="{i18n>Items}">
 				<subSections>
 					<ObjectPageSubSection>
 						<blocks>
@@ -220,7 +220,7 @@
 				</subSections>
 			</ObjectPageSection>
 
-			<ObjectPageSection title="Branches">
+			<ObjectPageSection title="{i18n>Branches}">
 				<subSections>
 					<ObjectPageSubSection>
 						<blocks>
@@ -244,7 +244,7 @@
 				</subSections>
 			</ObjectPageSection>
 
-			<ObjectPageSection title="Outlets">
+			<ObjectPageSection title="{i18n>Outlets}">
 				<subSections>
 					<ObjectPageSubSection>
 						<blocks>
@@ -273,8 +273,8 @@
         <footer>
 			<m:OverflowToolbar>
 				<m:ToolbarSpacer/>
-				<m:Button type="Accept" text="Save" press=".onSavePress"/>
-				<m:Button type="Reject" text="Cancel" press=".onCancelPress"/>
+				<m:Button type="Accept" text="{i18n>Save}" press=".onSavePress"/>
+				<m:Button type="Reject" text="{i18n>Cancel}" press=".onCancelPress"/>
 			</m:OverflowToolbar>
 		</footer>
 

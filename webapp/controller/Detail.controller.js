@@ -161,11 +161,15 @@ sap.ui.define([
 
 		//detail-detail btns
 		itemAdd:function(oEvent){
+			this.indexData=this.getView().getModel("mLst").getProperty('/manufacturer/'+this._product+"/Items");
+			let index=this.indexData[this.indexData.length-1].id.substr(1)
+			let indexInt=Number(index)+1;
+			indexInt="i"+indexInt
 			var supplierPath = oEvent.getSource().getBindingContext("mLst").getPath(),
 			supplier = this.getView().getModel('mLst').getProperty(supplierPath+"/Items").length
 			this.getView().getModel('mLst').getProperty(supplierPath+"/Items").push(
 				{
-					"id":"temp_id",
+					"id":indexInt,
                     "item":"",
                     "model":""
 					
@@ -175,11 +179,15 @@ sap.ui.define([
 		},
 
 		branchAdd:function(oEvent){
+			this.indexData=this.getView().getModel("mLst").getProperty('/manufacturer/'+this._product+"/Branches");
+			let index=this.indexData[this.indexData.length-1].id.substr(1)
+			let indexInt=Number(index)+1;
+			indexInt="b"+indexInt
 			var supplierPath = oEvent.getSource().getBindingContext("mLst").getPath(),
 			supplier = this.getView().getModel('mLst').getProperty(supplierPath+"/Branches").length
 			this.getView().getModel('mLst').getProperty(supplierPath+"/Branches").push(
 				{
-					"id":"temp_id",
+					"id":indexInt,
                     "place":""
 					
 				})
@@ -188,11 +196,15 @@ sap.ui.define([
 		},
 
 		outletAdd:function(oEvent){
+			this.indexData=this.getView().getModel("mLst").getProperty('/manufacturer/'+this._product+"/Outlets");
+			let index=this.indexData[this.indexData.length-1].id.substr(1)
+			let indexInt=Number(index)+1;
+			indexInt="o"+indexInt
 			var supplierPath = oEvent.getSource().getBindingContext("mLst").getPath(),
 			supplier = this.getView().getModel('mLst').getProperty(supplierPath+"/Outlets").length
 			this.getView().getModel('mLst').getProperty(supplierPath+"/Outlets").push(
 				{
-					"id":"temp_id",
+					"id":indexInt,
 					"Name":"",
                     "place":""
 					

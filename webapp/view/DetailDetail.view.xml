@@ -15,12 +15,12 @@
 				<actions>
 					<m:ToggleButton
 						id="editBtn"
-						text="Edit"
+						text="{i18n>EditBtn}"
 						visible="true"
 						type="Emphasized"
                         press=".onEditPress"/>
 					<m:Button
-						text="Delete"
+						text="{i18n>DeleteBtn}"
 						type="Transparent"
 						press=".onDeletePress"/>
 				</actions>
@@ -41,11 +41,11 @@
 								columnsM="1"
 								visible="false">
 								<form:content>
-									<m:Label text="Id"/>
+									<m:Label text="{i18n>Id}"/>
 									<m:Text text="{mLst>id}"/>
-									<m:Label text="item"/>
+									<m:Label text="{i18n>Item}"/>
 									<m:Text text="{mLst>item}"/>
-									<m:Label text="Model"/>
+									<m:Label text="{i18n>Model}"/>
 									<m:Text text="{mLst>model}"/>
 									<m:Button text="Back" press=".backBtn"/>
 								</form:content>
@@ -64,22 +64,22 @@
 								columnsM="1"
 								visible="false">
 								<form:content>
-									<m:Label text="Id"/>
+									<m:Label text="{i18n>Id}"/>
 									<m:Text text="{mLst>id}"/>
-									<m:Label text="item"/>
+									<m:Label text="{i18n>Item}"/>
 									<m:Input id="itemitem" value="{path:'mLst>item', type : 'sap.ui.model.type.String',
 													constraints : {
 														minLength: 1,
 														maxLength: 10
 													}}" change= ".onNameChange"/>
-									<m:Label text="Model"/>
+									<m:Label text="{i18n>Model}"/>
 									<m:Input id="itemmodel" value="{path:'mLst>model', type : 'sap.ui.model.type.String',
 													constraints : {
 														minLength: 1,
 														maxLength: 10
 													}}" change= ".onNameChange"/>
-									<m:Button text="save" press="onItemSave"/>
-									<m:Button text="cancel" press="onItemCancel"/>
+									<m:Button text="{i18n>Save}" press="onItemSave"/>
+									<m:Button text="{i18n>Cancel}" press="onItemCancel"/>
 								</form:content>
 					</form:SimpleForm>
 
@@ -120,16 +120,16 @@
 								columnsM="1"
 								visible="false">
 								<form:content>
-									<m:Label text="Id"/>
+									<m:Label text="{i18n>Id}"/>
 									<m:Text text="{mLst>id}"/>
-									<m:Label text="Place"/>
+									<m:Label text="{i18n>Place}"/>
 									<m:Input id="branchplace" value="{path:'mLst>place', type : 'sap.ui.model.type.String',
 													constraints : {
 														minLength: 1,
 														maxLength: 10
 													}}" change= ".onNameChange"/>
-									<m:Button text="save" press="onBranchSave"/>
-									<m:Button text="cancel" press="onBranchCancell"/>
+									<m:Button text="{i18n>Save}" press="onBranchSave"/>
+									<m:Button text="{i18n>Cancel}" press="onBranchCancell"/>
 								</form:content>
 					</form:SimpleForm>
 
@@ -148,13 +148,13 @@
 								columnsM="1"
 								visible="false">
 								<form:content>
-									<m:Label text="Id"/>
+									<m:Label text="{i18n>Id}"/>
 									<m:Text text="{mLst>id}"/>
-									<m:Label text="Name"/>
+									<m:Label text="{i18n>Name}"/>
 									<m:Text text="{mLst>Name}"/>
-									<m:Label text="Model"/>
+									<m:Label text="{i18n>Place}"/>
 									<m:Text text="{mLst>place}"/>
-									<m:Button text="Back" press=".backBtn"/>
+									<m:Button text="{i18n>BackBtn}" press=".backBtn"/>
 								</form:content>
 					</form:SimpleForm>
 
@@ -171,22 +171,22 @@
 								columnsM="1"
 								visible="false">
 								<form:content>
-									<m:Label text="Id"/>
+									<m:Label text="{i18n>Id}"/>
 									<m:Text text="{mLst>id}"/>
-									<m:Label text="Name"/>
+									<m:Label text="{i18n>Name}"/>
 									<m:Input id="outletname" value="{path:'mLst>Name', type : 'sap.ui.model.type.String',
 													constraints : {
 														minLength: 1,
 														maxLength: 10
 													}}" change= ".onNameChange"/>
-									<m:Label text="Place"/>
+									<m:Label text="{i18n>Place}"/>
 									<m:Input id="outletplace" value="{path:'mLst>place', type : 'sap.ui.model.type.String',
 													constraints : {
 														minLength: 1,
 														maxLength: 10
 													}}" change= ".onNameChange"/>								
-									<m:Button text="save" press="onOutletSave"/>
-									<m:Button text="cancel" press="onOutletCancell"/>
+									<m:Button text="{i18n>Save}" press="onOutletSave"/>
+									<m:Button text="{i18n>Cancel}" press="onOutletCancell"/>
 								</form:content>
 					</form:SimpleForm>
 			</m:VBox>

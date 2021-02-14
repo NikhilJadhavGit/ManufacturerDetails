@@ -208,7 +208,7 @@ sap.ui.define([
 		},
 
 		onBranchCancell:function(){
-			if(this._IoB=='IA'){
+			if(this._IoB=='BA'){
 				this.getView().getModel("mLst").getProperty("/manufacturer/"+this._product+"/Branches").splice(this._supplier, 1);
 				this.getView().getModel("mLst").refresh();
 				this.oRouter.navTo("detail", {layout: fioriLibrary.LayoutType.TwoColumnsMidExpanded, product: this._product,AoD:"D"});
@@ -246,7 +246,7 @@ sap.ui.define([
 		},
 
 		onOutletCancell:function(){
-			if(this._IoB=='IA'){
+			if(this._IoB=='OA'){
 				this.getView().getModel("mLst").getProperty("/manufacturer/"+this._product+"/Outlets").splice(this._supplier, 1);
 				this.getView().getModel("mLst").refresh();
 				this.oRouter.navTo("detail", {layout: fioriLibrary.LayoutType.TwoColumnsMidExpanded, product: this._product,AoD:"D"});

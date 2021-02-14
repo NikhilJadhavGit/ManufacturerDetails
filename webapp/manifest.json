@@ -27,7 +27,7 @@
 			"i18n": {
 			  "type": "sap.ui.model.resource.ResourceModel",
 			  "settings": {
-				"bundleName": "Project.i18n.i18n",
+				"bundleName": "sap.ui.demo.fiori2.i18n.i18n",
 				"supportedLocales": [""],
 				"fallbackLocale": ""
 			  }

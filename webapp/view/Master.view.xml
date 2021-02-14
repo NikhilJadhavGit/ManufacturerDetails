@@ -8,7 +8,7 @@
 		<f:title>
 			<f:DynamicPageTitle>
 				<f:heading>
-					<Title text="Manufacturers"/>
+					<Title text="{i18n>homePageTitle}"/>
 				</f:heading>
 			</f:DynamicPageTitle>
 		</f:title>
@@ -18,11 +18,11 @@
 			<VBox fitContainer="true">
 				<OverflowToolbar class="sapFDynamicPageAlignContent">
 					<ToolbarSpacer/>
-					<OverflowToolbarButton icon="sap-icon://person-placeholder" text="Profile" type="Transparent" press=".profile"/>
+					<OverflowToolbarButton icon="{i18n>ProfileIcon}" text="Profile" type="Transparent" press=".profile"/>
 					<SearchField
 					 	id="searchField"
 						width="17.5rem"
-						placeholder="Search for..."
+						placeholder="{i18n>SearchField}"
 						enableSuggestions="true"
 						search=".onSearch"
 						suggest=".onSuggest"
@@ -32,8 +32,8 @@
 						}">
 					<SuggestionItem text="{mLst>Name}" description="{path:'mLst>id'}" key="{mLst>id}"/>
 					</SearchField>
-					<OverflowToolbarButton icon="sap-icon://add" text="Add" type="Transparent" press=".onAdd"/>
-					<OverflowToolbarButton icon="sap-icon://sort" text="Sort" type="Transparent" press=".onSort"/>
+					<OverflowToolbarButton icon="{i18n>AddIcon}" text="Add" type="Transparent" press=".onAdd"/>
+					<OverflowToolbarButton icon="{i18n>SortIcon}" text="Sort" type="Transparent" press=".onSort"/>
 				</OverflowToolbar>
 				<Table
 					id="productsTable"
@@ -48,13 +48,13 @@
 					width="auto">
 					<columns>
 						<Column width="12em">
-							<Text text="Manufacturer"/>
+							<Text text="{i18n>Manufacturer}"/>
 						</Column>
-						<Column width="20em">
-							<Text text="Contact details"/>
+						<Column>
+							<Text text="{i18n>Contacts}"/>
 						</Column>
 						<Column	hAlign="End">
-							<Text text="Type of product"/>
+							<Text text="{i18n>Type}"/>
 						</Column>
 					</columns>
 					<items>
