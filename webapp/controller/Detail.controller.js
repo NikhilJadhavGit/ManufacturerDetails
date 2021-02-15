@@ -162,9 +162,15 @@ sap.ui.define([
 		//detail-detail btns
 		itemAdd:function(oEvent){
 			this.indexData=this.getView().getModel("mLst").getProperty('/manufacturer/'+this._product+"/Items");
+			let indexInt;
+			if(this.indexData.length>0){
 			let index=this.indexData[this.indexData.length-1].id.substr(1)
-			let indexInt=Number(index)+1;
+			indexInt=Number(index)+1;
 			indexInt="i"+indexInt
+			}
+			else{
+				indexInt="i0";
+			}
 			var supplierPath = oEvent.getSource().getBindingContext("mLst").getPath(),
 			supplier = this.getView().getModel('mLst').getProperty(supplierPath+"/Items").length
 			this.getView().getModel('mLst').getProperty(supplierPath+"/Items").push(
@@ -180,9 +186,15 @@ sap.ui.define([
 
 		branchAdd:function(oEvent){
 			this.indexData=this.getView().getModel("mLst").getProperty('/manufacturer/'+this._product+"/Branches");
+			let indexInt
+			if(this.indexData.length>0){
 			let index=this.indexData[this.indexData.length-1].id.substr(1)
-			let indexInt=Number(index)+1;
+			indexInt=Number(index)+1;
 			indexInt="b"+indexInt
+			}
+			else{
+				indexInt="b0"
+			}
 			var supplierPath = oEvent.getSource().getBindingContext("mLst").getPath(),
 			supplier = this.getView().getModel('mLst').getProperty(supplierPath+"/Branches").length
 			this.getView().getModel('mLst').getProperty(supplierPath+"/Branches").push(
@@ -197,9 +209,15 @@ sap.ui.define([
 
 		outletAdd:function(oEvent){
 			this.indexData=this.getView().getModel("mLst").getProperty('/manufacturer/'+this._product+"/Outlets");
+			let indexInt;
+			if(this.indexData.length>0){
 			let index=this.indexData[this.indexData.length-1].id.substr(1)
-			let indexInt=Number(index)+1;
+			indexInt=Number(index)+1;
 			indexInt="o"+indexInt
+			}
+			else{
+				indexInt="o0";
+			}
 			var supplierPath = oEvent.getSource().getBindingContext("mLst").getPath(),
 			supplier = this.getView().getModel('mLst').getProperty(supplierPath+"/Outlets").length
 			this.getView().getModel('mLst').getProperty(supplierPath+"/Outlets").push(
